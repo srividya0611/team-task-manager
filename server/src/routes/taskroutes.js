@@ -9,7 +9,7 @@ const {
   getTasks,
   updateTaskStatus,
   deleteTask
-} = require("../Controllers/taskControllers");
+} = require("../controllers/taskControllers");
 
 // Create Task
 router.post("/", authMiddleware, createTask);

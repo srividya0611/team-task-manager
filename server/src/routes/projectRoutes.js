@@ -7,7 +7,7 @@ const authMiddleware = require("../middleware/authMiddleware");
 const {
   createProject,
   getProjects
-} = require("../Controllers/projectControllers");
+} = require("../controllers/projectControllers");
 
 // Create Project
 router.post("/", authMiddleware, createProject);
