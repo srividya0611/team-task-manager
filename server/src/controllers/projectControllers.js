@@ -18,9 +18,11 @@ const createProject = async (req, res) => {
     });
 
   } catch (error) {
+
     res.status(500).json({
       message: error.message
     });
+
   }
 };
 
@@ -28,14 +30,17 @@ const createProject = async (req, res) => {
 const getProjects = async (req, res) => {
   try {
 
-    const projects = await Project.find();
+    const projects = await Project.find()
+      .populate("createdBy", "name email");
 
     res.status(200).json(projects);
 
   } catch (error) {
+
     res.status(500).json({
       message: error.message
     });
+
   }
 };
 
